@@ -28,7 +28,7 @@ class ClimbingRopes(models.Model):
     unique_id = models.UUIDField(
         primary_key=True, default=uuid.uuid1, editable=False, unique=True)
     name = models.CharField(max_length=150)
-    meters_available = models.IntegerField(max_length=15, null=True)
+    meters_available = models.FloatField(max_length=15, null=True)
     color_scheme_ref = models.ForeignKey(
         "ColorSchemes", null=True, on_delete=models.PROTECT, blank=True)
     rope_ref = models.ForeignKey(
@@ -40,7 +40,7 @@ class OtherRopes(models.Model):
     unique_id = models.UUIDField(
         primary_key=True, default=uuid.uuid1, editable=False, unique=True)
     name = models.CharField(max_length=150)
-    meters_available = models.IntegerField(max_length=15, null=True)
+    meters_available = models.FloatField(max_length=15, null=True)
     color_scheme_ref = models.ForeignKey(
         "ColorSchemes", null=True, on_delete=models.PROTECT, blank=True)
     rope_ref = models.ForeignKey(
